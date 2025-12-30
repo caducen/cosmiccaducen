@@ -19,7 +19,7 @@ export function initScrollAnimations(environment) {
 
     // Observe all sections and subsections
     const sectionsToAnimate = document.querySelectorAll(
-        '.detail-section, .subsection, .quote-box, .content-column'
+        '.detail-section, .subsection, .quote-box, .mission-brief, .triad-card'
     );
     sectionsToAnimate.forEach(section => {
         section.classList.add('fade-in-hidden');

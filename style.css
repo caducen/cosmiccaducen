@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 :root {
     --color-gold: #d4af37;
@@ -15,7 +15,7 @@ body {
     margin: 0;
     overflow-x: hidden;
     /* Allow vertical scroll */
-    font-family: 'Playfair Display', serif;
+    font-family: 'Roboto', sans-serif;
     color: var(--color-text);
     background-color: #0a0a1a;
     /* Keep color for overscroll but ensure app is on top */
@@ -84,7 +84,7 @@ header {
 }
 
 .logo {
-    font-family: 'Cinzel', serif;
+    font-family: 'Philosopher', serif;
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 0.2em;
@@ -264,7 +264,7 @@ main {
 }
 
 h1 {
-    font-family: 'Cinzel', serif;
+    font-family: 'Philosopher', serif;
     font-size: 4rem;
     font-weight: 700;
     margin: 0;
@@ -375,7 +375,7 @@ footer {
 }
 
 .content-column h2 {
-    font-family: 'Cinzel', serif;
+    font-family: 'Philosopher', serif;
     font-size: 1.5rem;
     color: #ffd700;
     margin-bottom: 1rem;
@@ -389,6 +389,24 @@ footer {
     line-height: 1.6;
     text-align: left;
     color: #d3d3d3;
+}
+
+/* TRIAD CARDS - High specificity to ensure visibility */
+section.triad-section .triad-cards .triad-card {
+    background: rgba(10, 10, 26, 0.85) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 2px solid rgba(212, 175, 55, 0.5) !important;
+    border-radius: 12px !important;
+    padding: 1.5rem !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 0, 0, 0.4) !important;
+    color: #e0e0e0 !important;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative !important;
+    z-index: 10 !important;
+    min-height: 200px !important;
 }
 
 /* Detailed Sections Styles */
@@ -420,7 +438,7 @@ footer {
 }
 
 .section-header h2 {
-    font-family: 'Cinzel', serif;
+    font-family: 'Philosopher', serif;
     font-size: 3rem;
     color: #ffd700;
     margin: 0 0 1rem 0;
@@ -437,7 +455,7 @@ footer {
 }
 
 .section-tagline {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Philosopher', serif;
     font-style: italic;
     font-size: 1.2rem;
     color: #daa520;
@@ -460,7 +478,7 @@ footer {
 }
 
 .subsection h3 {
-    font-family: 'Cinzel', serif;
+    font-family: 'Philosopher', serif;
     font-size: 1.8rem;
     color: #d4af37;
     margin: 0 0 1rem 0;
@@ -493,7 +511,7 @@ footer {
     padding: 2rem;
     margin: 1rem 0;
     text-align: center;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Philosopher', serif;
     font-style: italic;
     font-size: 1.2rem;
     line-height: 1.8;
@@ -520,7 +538,7 @@ footer {
     font-style: normal;
     font-size: 0.95rem;
     color: #d4af37;
-    font-family: 'Cinzel', serif;
+    font-family: 'Philosopher', serif;
     letter-spacing: 0.05em;
 }
 
@@ -923,7 +941,7 @@ p button[data-portal-target],
 }
 
 .portal-content h3 {
-    font-family: 'Cinzel', serif;
+    font-family: 'Philosopher', serif;
     font-size: 1.8rem;
     color: var(--color-gold);
     margin: 0 0 1rem 0;
@@ -931,7 +949,7 @@ p button[data-portal-target],
 }
 
 .portal-content p {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     line-height: 1.6;
     margin: 0 0 1rem 0;
@@ -951,7 +969,7 @@ p button[data-portal-target],
     color: var(--color-gold);
     background: rgba(212, 175, 55, 0.05);
     border-radius: 4px;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Philosopher', serif;
     font-size: 1.05rem;
     line-height: 1.7;
 }
@@ -967,7 +985,7 @@ p button[data-portal-target],
     border: 1px solid rgba(212, 175, 55, 0.4);
     border-radius: 8px;
     color: var(--color-gold);
-    font-family: 'Playfair Display', serif;
+    font-family: 'Philosopher', serif;
     font-size: 0.95rem;
     cursor: pointer;
     transition: background 0.2s ease, border-color 0.2s ease;
@@ -1246,5 +1264,671 @@ body:not(.loaded) .hero-section {
 
     [data-portal-target] {
         margin: 0 0.25rem;
+    }
+}
+
+/* ============================================
+   TRIAD SECTION (The Source, The Bridge, The Receiver)
+   ============================================ */
+
+.triad-section {
+    margin: 3rem auto;
+    max-width: 1100px;
+    padding: 0 2rem;
+    pointer-events: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.triad-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.triad-card {
+    flex: 1 1 280px;
+    max-width: 340px;
+    background: rgba(10, 10, 26, 0.7) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(212, 175, 55, 0.4) !important;
+    border-radius: 12px !important;
+    padding: 1.5rem !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 0, 0, 0.3) !important;
+    color: #e0e0e0 !important;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    pointer-events: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+.triad-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(212, 175, 55, 0.4);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+.triad-card h3 {
+    font-family: 'Philosopher', serif;
+    font-size: 1.5rem;
+    color: #ffd700;
+    margin: 0 0 1rem 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+    padding-bottom: 0.5rem;
+}
+
+.triad-card p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #d3d3d3;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .triad-section {
+        padding: 0 1rem;
+    }
+
+    .triad-cards {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .triad-card {
+        max-width: 100%;
+    }
+}
+
+/* ============================================
+   HEADER STRUCTURE (header-top, header-quote)
+   ============================================ */
+
+header {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+}
+
+.header-quote {
+    text-align: center;
+    padding: 0.75rem 1.5rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    background: rgba(10, 10, 26, 0.5);
+}
+
+.header-quote p {
+    font-family: 'Philosopher', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: rgba(212, 175, 55, 0.9);
+    margin: 0;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    .header-top {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .header-quote {
+        padding: 0.5rem 1rem;
+    }
+
+    .header-quote p {
+        font-size: 0.85rem;
+    }
+}
+
+/* ============================================
+   MISSION BRIEF (Welcome Section)
+   ============================================ */
+
+.mission-brief {
+    max-width: 800px;
+    margin: 2rem auto 3rem;
+    padding: 2rem 2.5rem;
+    pointer-events: auto;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.mission-brief .welcome-title {
+    font-family: 'Philosopher', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 1rem;
+    letter-spacing: 0.1em;
+    line-height: 1.1;
+    text-align: center;
+    background: linear-gradient(180deg,
+            #ffeaa7 0%,
+            #daa520 20%,
+            #b8860b 40%,
+            #8b6914 60%,
+            #d4af37 80%,
+            #f0e68c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 1px 1px 0 #b8860b,
+        2px 2px 0 #9a7309,
+        3px 3px 0 #7d5f07,
+        4px 4px 0 #614a05,
+        5px 5px 0 #453603,
+        6px 6px 8px rgba(0, 0, 0, 0.6),
+        0 0 20px rgba(255, 215, 0, 0.4),
+        -1px -1px 0 rgba(255, 234, 167, 0.3);
+    animation: fadeIn 4s ease-out forwards 1s, subtleShine 8s ease-in-out infinite;
+}
+
+.mission-brief .guiding-question {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    font-style: italic;
+    text-align: center;
+    color: var(--color-gold);
+    margin: 0 0 2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.mission-brief .mission-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-text);
+    text-align: left;
+    margin: 0;
+}
+
+.mission-brief .mission-text p {
+    margin-bottom: 1.25rem;
+}
+
+.mission-brief .mission-text p:last-child {
+    margin-bottom: 0;
+}
+
+.mission-brief .mission-hook {
+    font-size: 1.1em;
+}
+
+.mission-brief .mission-closing {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-style: italic;
+}
+
+.mission-brief .mission-text em {
+    font-style: italic;
+    color: var(--color-gold);
+}
+
+@media (max-width: 768px) {
+    .mission-brief {
+        max-width: 90%;
+        margin: 1.5rem 1rem 2rem;
+        padding: 1.5rem 1.25rem;
+        border-radius: 6px;
+    }
+
+    .mission-brief .welcome-title {
+        font-size: 2rem;
+    }
+
+    .mission-brief .guiding-question {
+        font-size: 1.4rem;
+    }
+
+    .mission-brief .mission-text {
+        font-size: 1rem;
+    }
+}
+
+/* ============================================
+   THE PROMISE SECTION
+   ============================================ */
+
+.promise-boxes {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.promise-box {
+    width: 100%;
+    padding: 1.5rem 2rem;
+    background: rgba(10, 10, 26, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.promise-box p {
+    font-family: 'Philosopher', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: var(--color-gold);
+    margin: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.promise-box button[data-portal-target] {
+    flex-shrink: 0;
+    margin-left: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .promise-box {
+        padding: 1.2rem 1.5rem;
+        border-radius: 40px;
+    }
+
+    .promise-box p {
+        font-size: 1.1rem;
+    }
+}
+
+/* ============================================
+   THE CORE SELF SECTION
+   ============================================ */
+
+.core-self-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.core-intro {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3rem;
+    line-height: 2;
+    color: var(--color-text);
+    text-align: center;
+    margin-bottom: 3rem;
+    background: rgba(10, 10, 26, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.core-pointer {
+    font-family: 'Philosopher', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: rgba(212, 175, 55, 0.9);
+    text-align: center;
+    margin-bottom: 4rem;
+    background: rgba(10, 10, 26, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.core-teaching {
+    background: rgba(10, 10, 26, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.core-teaching h3 {
+    font-family: 'Philosopher', serif;
+    font-size: 2rem;
+    color: var(--color-gold);
+    margin: 0 0 1.5rem;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.core-teaching p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}
+
+.core-teaching p:last-child {
+    margin-bottom: 0;
+}
+
+.teaching-mirror {
+    font-family: 'Philosopher', serif;
+    font-size: 1.5rem;
+    color: var(--color-gold);
+    text-align: center;
+    font-style: italic;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.teaching-conclusion {
+    font-family: 'Philosopher', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    line-height: 2;
+    color: rgba(212, 175, 55, 0.9);
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+@media (max-width: 768px) {
+    .core-intro {
+        font-size: 1.1rem;
+        padding: 1.5rem;
+    }
+
+    .core-pointer {
+        font-size: 1rem;
+        padding: 1.5rem;
+    }
+
+    .core-teaching {
+        padding: 1.5rem;
+    }
+
+    .core-teaching h3 {
+        font-size: 1.5rem;
+    }
+
+    .teaching-mirror {
+        font-size: 1.2rem;
+    }
+
+    .teaching-conclusion {
+        font-size: 1.1rem;
+    }
+}
+
+/* ============================================
+   SITE FOOTER
+   ============================================ */
+
+.site-footer {
+    pointer-events: auto;
+    background: linear-gradient(to bottom, transparent 0%, rgba(10, 10, 26, 0.95) 20%);
+    padding: 4rem 2rem 2rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.footer-book-cta {
+    flex: 0 0 auto;
+}
+
+.book-download-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.book-download-link:hover {
+    transform: translateY(-8px);
+}
+
+.book-cover-image {
+    width: 180px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+.book-download-link:hover .book-cover-image {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(212, 175, 55, 0.4);
+}
+
+.book-cta-text {
+    margin-top: 1rem;
+    font-family: 'Philosopher', serif;
+    font-size: 1rem;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 4px;
+    background: rgba(212, 175, 55, 0.1);
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.book-download-link:hover .book-cta-text {
+    background: rgba(212, 175, 55, 0.2);
+    border-color: rgba(212, 175, 55, 0.6);
+}
+
+.footer-connect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-heading {
+    font-family: 'Philosopher', serif;
+    font-size: 1.5rem;
+    color: var(--color-gold);
+    margin: 0;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.footer-qr-codes {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.qr-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.qr-link:hover {
+    transform: scale(1.05);
+}
+
+.qr-code {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+
+.qr-link:hover .qr-code {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.qr-label {
+    margin-top: 0.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.85rem;
+    color: var(--color-text);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.footer-social-icons {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: var(--color-gold);
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: rgba(212, 175, 55, 0.25);
+    border-color: rgba(212, 175, 55, 0.6);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.social-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.footer-email {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-email:hover {
+    color: var(--color-gold);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.footer-bottom p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.85rem;
+    color: var(--color-text);
+    opacity: 0.7;
+    margin: 0.25rem 0;
+}
+
+.footer-tagline {
+    font-family: 'Philosopher', serif;
+    font-style: italic;
+    color: var(--color-gold) !important;
+    opacity: 0.5 !important;
+}
+
+.footer-designed {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8rem;
+    color: var(--color-text);
+    opacity: 0.6;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 3rem 1.5rem 1.5rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .book-cover-image {
+        width: 150px;
+    }
+
+    .qr-code {
+        width: 80px;
+        height: 80px;
+    }
+
+    .footer-qr-codes {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .book-cover-image {
+        width: 130px;
+    }
+
+    .qr-code {
+        width: 70px;
+        height: 70px;
+    }
+
+    .footer-heading {
+        font-size: 1.2rem;
     }
 }

@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/caduceus_isolated.png" />
+  <link rel="apple-touch-icon" href="/caduceus_isolated.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consciousness: A Field Guide - CosmicCaducen.com</title>
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    /* Field Guide Landing Page Specific Styles */
+    .field-guide-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--color-dark-blue);
+      position: relative;
+    }
+
+    /* Minimal Header */
+    .field-guide-header {
+      padding: 1.5rem 2rem;
+      text-align: center;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      background: rgba(10, 10, 26, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .field-guide-header .logo-link {
+      font-family: 'Philosopher', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--color-gold);
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .field-guide-header .logo-link:hover {
+      color: #f0e68c;
+    }
+
+    /* Main Content Area */
+    .field-guide-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 2rem;
+      max-width: 600px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* Cover Image */
+    .field-guide-cover {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(212, 175, 55, 0.2);
+      margin-bottom: 2rem;
+    }
+
+    /* Headline */
+    .field-guide-headline {
+      font-family: 'Philosopher', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      text-align: center;
+      margin: 0 0 1rem 0;
+      line-height: 1.1;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+    }
+
+    /* Subheadline */
+    .field-guide-subheadline {
+      font-family: 'Philosopher', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #daa520;
+      text-align: center;
+      margin: 0 0 2rem 0;
+      line-height: 1.4;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* Description */
+    .field-guide-description {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--color-text);
+      text-align: center;
+      margin: 0 0 3rem 0;
+      max-width: 500px;
+    }
+
+    /* Email Form */
+    .field-guide-form {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 0 1.5rem 0;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 1rem 1.25rem;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem;
+      color: var(--color-text);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      box-sizing: border-box;
+    }
+
+    .form-input::placeholder {
+      color: rgba(224, 224, 224, 0.5);
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--color-gold);
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+    }
+
+    .form-button {
+      width: 100%;
+      padding: 1rem 2rem;
+      font-family: 'Philosopher', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--color-dark-blue);
+      background: var(--color-gold);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      min-height: 56px;
+    }
+
+    .form-button:hover {
+      background: #f0e68c;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+    }
+
+    .form-button:active {
+      transform: translateY(0);
+    }
+
+    .form-button:focus {
+      outline: 2px solid var(--color-gold);
+      outline-offset: 3px;
+    }
+
+    /* Privacy Text */
+    .field-guide-privacy {
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.85rem;
+      color: rgba(224, 224, 224, 0.6);
+      text-align: center;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Footer */
+    .field-guide-footer {
+      padding: 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      background: rgba(10, 10, 26, 0.5);
+      margin-top: auto;
+    }
+
+    .field-guide-footer p {
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.85rem;
+      color: rgba(224, 224, 224, 0.6);
+      margin: 0.5rem 0;
+    }
+
+    .field-guide-footer .footer-tagline {
+      font-family: 'Philosopher', serif;
+      font-style: italic;
+      color: var(--color-gold);
+      opacity: 0.7;
+    }
+
+    /* Animation for headline glow effect */
+    @keyframes subtleShine {
+      0%, 100% {
+        filter: brightness(1);
+      }
+      50% {
+        filter: brightness(1.1);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .field-guide-content {
+        padding: 2rem 1.5rem;
+      }
+
+      .field-guide-headline {
+        font-size: 2.25rem;
+      }
+
+      .field-guide-subheadline {
+        font-size: 1.25rem;
+      }
+
+      .field-guide-description {
+        font-size: 0.95rem;
+      }
+
+      .field-guide-cover {
+        max-width: 250px;
+      }
+
+      .field-guide-header {
+        padding: 1rem 1.5rem;
+      }
+
+      .field-guide-header .logo-link {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .field-guide-headline {
+        font-size: 1.75rem;
+      }
+
+      .field-guide-subheadline {
+        font-size: 1.1rem;
+      }
+
+      .field-guide-description {
+        font-size: 0.9rem;
+      }
+
+      .field-guide-cover {
+        max-width: 200px;
+      }
+
+      .form-input,
+      .form-button {
+        font-size: 0.95rem;
+        padding: 0.875rem 1rem;
+      }
+    }
+
+    /* Hide 3D background on this page */
+    #app {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app"></div>
+  
+  <div class="field-guide-page">
+    <!-- Minimal Header -->
+    <header class="field-guide-header">
+      <a href="/" class="logo-link">CosmicCaducen.com</a>
+    </header>
+
+    <!-- Main Content -->
+    <main class="field-guide-content">
+      <!-- Cover Image (if available) -->
+      <img src="/field-guide-cover.jpg" alt="Consciousness: A Field Guide" class="field-guide-cover" onerror="this.style.display='none'">
+
+      <!-- Headline -->
+      <h1 class="field-guide-headline">Consciousness: A Field Guide</h1>
+
+      <!-- Subheadline -->
+      <p class="field-guide-subheadline">From Frequency to Practice</p>
+      <p class="field-guide-subheadline" style="font-size: 1.1rem; margin-top: -1rem;">A 37-page journey into consciousness as fundamental field</p>
+
+      <!-- Description -->
+      <p class="field-guide-description">
+        Explore how consciousness is not generated by your brain but received and modulated by it. Ancient wisdom meets quantum science. Practical frameworks for aligning with the field.
+      </p>
+
+      <!-- Email Form -->
+      <form id="email-form" class="field-guide-form" action="#" method="POST">
+        <div class="form-group">
+          <label for="email" class="sr-only">Email Address</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            class="form-input" 
+            placeholder="Enter your email address" 
+            required 
+            aria-label="Email address"
+          >
+        </div>
+        <button type="submit" class="form-button">Get The Field Guide</button>
+      </form>
+
+      <!-- Privacy Text -->
+      <p class="field-guide-privacy">
+        We respect your privacy. Unsubscribe anytime. Your email is safe with us.
+      </p>
+    </main>
+
+    <!-- Footer -->
+    <footer class="field-guide-footer">
+      <p>&copy; 2025 Aethereal. All Rights Reserved.</p>
+      <p class="footer-tagline">Consciousness as a Field of Frequency</p>
+      <p>Designed by CAVU AI</p>
+    </footer>
+  </div>
+
+  <script>
+    // Form submission handler (placeholder for future Kit integration)
+    document.getElementById('email-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      
+      // Placeholder: Log email for now
+      console.log('Email submitted:', email);
+      
+      // TODO: Connect to Kit email service
+      // For now, show a simple message
+      alert('Thank you! We\'ll send you the Field Guide shortly. (Form submission will be connected to email service soon.)');
+      
+      // Reset form
+      this.reset();
+    });
+
+    // Screen reader only class
+    const style = document.createElement('style');
+    style.textContent = '.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; }';
+    document.head.appendChild(style);
+  </script>
+</body>
+
+</html>
