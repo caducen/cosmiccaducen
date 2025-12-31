@@ -350,13 +350,13 @@
       </p>
 
       <!-- Email Form -->
-      <form id="email-form" class="field-guide-form" action="#" method="POST">
+      <form id="email-form" class="field-guide-form" action="https://app.kit.com/forms/8922987/subscriptions" method="post">
         <div class="form-group">
           <label for="email" class="sr-only">Email Address</label>
           <input 
             type="email" 
             id="email" 
-            name="email" 
+            name="email_address" 
             class="form-input" 
             placeholder="Enter your email address" 
             required 
@@ -381,22 +381,6 @@
   </div>
 
   <script>
-    // Form submission handler (placeholder for future Kit integration)
-    document.getElementById('email-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const email = document.getElementById('email').value;
-      
-      // Placeholder: Log email for now
-      console.log('Email submitted:', email);
-      
-      // TODO: Connect to Kit email service
-      // For now, show a simple message
-      alert('Thank you! We\'ll send you the Field Guide shortly. (Form submission will be connected to email service soon.)');
-      
-      // Reset form
-      this.reset();
-    });
-
     // Screen reader only class
     const style = document.createElement('style');
     style.textContent = '.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; }';
