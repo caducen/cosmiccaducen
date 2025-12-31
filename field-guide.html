@@ -7,8 +7,29 @@
   <link rel="apple-touch-icon" href="/caduceus_isolated.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Consciousness: A Field Guide - CosmicCaducen.com</title>
-  <link rel="stylesheet" href="/style.css">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+    :root {
+      --color-gold: #d4af37;
+      --color-dark-blue: #0a0a1a;
+      --color-text: #e0e0e0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: var(--color-text);
+      background-color: var(--color-dark-blue);
+      margin: 0;
+      padding: 0;
+    }
+
     /* Field Guide Landing Page Specific Styles */
     .field-guide-page {
       min-height: 100vh;
@@ -79,6 +100,8 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--color-gold);
+      /* Plain metallic gold - no 3D effects */
+      text-shadow: none;
     }
 
     /* Subheadline */

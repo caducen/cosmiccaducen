@@ -30,18 +30,44 @@ export function createEnvironment(scene) {
     const textureLoader = new THREE.TextureLoader();
 
     // LAYER 1: Static Universe Background (far back)
+    // REMOVED: Background layer removed for more subtle design
+    // If you want to restore it, uncomment the code below and set backgroundType and backgroundSource
+    /*
+    const backgroundType = 'image'; // or 'video'
+    const backgroundSource = '/your-background.png'; // or '/your-video.mp4'
+    
     const universeGeometry = new THREE.PlaneGeometry(35, 22);
-    const universeTexture = textureLoader.load('/cosmic_universe.png');
+    
+    let universeTexture;
+    
+    if (backgroundType === 'video') {
+        const video = document.createElement('video');
+        video.src = backgroundSource;
+        video.loop = true;
+        video.muted = true;
+        video.playsInline = true;
+        video.play().catch(err => console.log('Video autoplay prevented:', err));
+        
+        universeTexture = new THREE.VideoTexture(video);
+        universeTexture.minFilter = THREE.LinearFilter;
+        universeTexture.magFilter = THREE.LinearFilter;
+    } else {
+        universeTexture = textureLoader.load(backgroundSource);
+    }
+    
     universeTexture.colorSpace = THREE.SRGBColorSpace;
     const universeMaterial = new THREE.MeshBasicMaterial({
         map: universeTexture,
         side: THREE.DoubleSide
-        // Note: MeshBasicMaterial doesn't support emissive/emissiveIntensity
-        // If you need emissive glow, use MeshStandardMaterial instead
     });
     const universeMesh = new THREE.Mesh(universeGeometry, universeMaterial);
-    universeMesh.position.z = -6; // Back to original position
+    universeMesh.position.z = -6;
     scene.add(universeMesh);
+    
+    if (backgroundType === 'video') {
+        universeMesh.userData.video = video;
+    }
+    */
 
     // LAYER 2: Pulsing Caduceus (foreground)
     // Corrected back to square aspect ratio to preserve sacred geometry circles
@@ -97,6 +123,7 @@ export function createEnvironment(scene) {
         particles: particlesMesh,
         scrollParallax: 0, // Will be updated by scroll handler
         update: function(time) {
+
             // Universe stays completely still (no animation)
 
             // Only the Caduceus floats and pulses
