@@ -86,7 +86,19 @@
       box-shadow: 
         0 10px 30px rgba(0, 0, 0, 0.5),
         0 0 20px rgba(212, 175, 55, 0.2);
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Free Copy Text */
+    .field-guide-free-text {
+      font-family: 'Philosopher', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--color-gold);
+      text-align: center;
+      margin: 0 0 2rem 0;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
     }
 
     /* Headline */
@@ -260,6 +272,10 @@
         max-width: 250px;
       }
 
+      .field-guide-free-text {
+        font-size: 1.1rem;
+      }
+
       .field-guide-header {
         padding: 1rem 1.5rem;
       }
@@ -284,6 +300,10 @@
 
       .field-guide-cover {
         max-width: 200px;
+      }
+
+      .field-guide-free-text {
+        font-size: 1rem;
       }
 
       .form-input,
@@ -313,6 +333,9 @@
     <main class="field-guide-content">
       <!-- Cover Image (if available) -->
       <img src="/field-guide-cover.jpg" alt="Consciousness: A Field Guide" class="field-guide-cover" onerror="this.style.display='none'">
+      
+      <!-- Free Copy Text -->
+      <p class="field-guide-free-text">A Free Copy of the Field Guide</p>
 
       <!-- Headline -->
       <h1 class="field-guide-headline">Consciousness: A Field Guide</h1>
@@ -340,7 +363,7 @@
             aria-label="Email address"
           >
         </div>
-        <button type="submit" class="form-button">Get The Field Guide</button>
+        <button type="submit" class="form-button">Get the Field Guide for Free</button>
       </form>
 
       <!-- Privacy Text -->
