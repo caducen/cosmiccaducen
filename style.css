@@ -339,7 +339,7 @@ h1 {
 footer {
     text-align: center;
     font-size: 0.8rem;
-    opacity: 0.6;
+    opacity: 1;
     pointer-events: auto;
     content: "CosmicCaducen.com";
 }
@@ -1702,9 +1702,37 @@ header {
 
 .site-footer {
     pointer-events: auto;
-    background: linear-gradient(to bottom, transparent 0%, rgba(10, 10, 26, 0.95) 20%);
+    /* Solid background for better readability on all devices */
+    background: rgba(10, 10, 26, 0.98);
     padding: 4rem 2rem 2rem;
     margin-top: 4rem;
+}
+
+/* Ensure footer images are fully opaque - multiple selectors for maximum specificity */
+.site-footer img,
+.site-footer .book-cover-image,
+.site-footer .qr-code,
+.book-cover-image,
+.qr-code {
+    opacity: 1 !important;
+    filter: none !important;
+    mix-blend-mode: normal !important;
+}
+
+/* Remove any transparency from parent containers affecting images */
+.footer-book-cta,
+.footer-qr-codes,
+.qr-link,
+.book-download-link {
+    opacity: 1 !important;
+}
+
+/* Add subtle background behind footer content for extra contrast */
+.footer-content {
+    background: rgba(10, 10, 26, 0.4);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(212, 175, 55, 0.15);
 }
 
 .footer-content {
@@ -1715,6 +1743,7 @@ header {
     align-items: flex-start;
     gap: 4rem;
     flex-wrap: wrap;
+    /* Background and border moved to base .footer-content rule above */
 }
 
 .footer-book-cta {
@@ -1739,6 +1768,11 @@ header {
     border-radius: 4px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.2);
     transition: box-shadow 0.3s ease;
+    opacity: 1 !important;
+    /* Ensure image appears fully opaque */
+    background: rgba(10, 10, 26, 1);
+    padding: 2px;
+    display: block;
 }
 
 .book-download-link:hover .book-cover-image {
@@ -1753,10 +1787,11 @@ header {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     padding: 0.5rem 1rem;
-    border: 1px solid rgba(212, 175, 55, 0.4);
+    border: 1px solid rgba(212, 175, 55, 0.6);
     border-radius: 4px;
-    background: rgba(212, 175, 55, 0.1);
+    background: rgba(212, 175, 55, 0.2);
     transition: background 0.3s ease, border-color 0.3s ease;
+    font-weight: 500;
 }
 
 .book-download-link:hover .book-cta-text {
@@ -1804,6 +1839,11 @@ header {
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     transition: box-shadow 0.3s ease;
+    opacity: 1 !important;
+    /* Ensure QR codes appear fully opaque */
+    background: rgba(255, 255, 255, 1);
+    padding: 4px;
+    display: block;
 }
 
 .qr-link:hover .qr-code {
@@ -1817,6 +1857,8 @@ header {
     color: var(--color-text);
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    font-weight: 500;
+    opacity: 1 !important;
 }
 
 .footer-social-icons {
@@ -1902,15 +1944,18 @@ header {
         flex-direction: column;
         align-items: center;
         gap: 3rem;
+        padding: 2rem 1.5rem;
     }
 
     .book-cover-image {
         width: 150px;
+        opacity: 1 !important;
     }
 
     .qr-code {
         width: 80px;
         height: 80px;
+        opacity: 1 !important;
     }
 
     .footer-qr-codes {
@@ -1919,16 +1964,31 @@ header {
 }
 
 @media (max-width: 480px) {
+    .site-footer {
+        background: rgba(10, 10, 26, 1);
+    }
+
+    .footer-content {
+        padding: 1.5rem 1rem;
+    }
+
     .book-cover-image {
         width: 130px;
+        opacity: 1 !important;
     }
 
     .qr-code {
         width: 70px;
         height: 70px;
+        opacity: 1 !important;
     }
 
     .footer-heading {
         font-size: 1.2rem;
+    }
+
+    .book-cta-text {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
     }
 }
