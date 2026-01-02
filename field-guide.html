@@ -80,7 +80,7 @@
     /* Cover Image */
     .field-guide-cover {
       width: 100%;
-      max-width: 300px;
+      max-width: 500px;
       height: auto;
       border-radius: 8px;
       box-shadow: 
@@ -269,7 +269,7 @@
       }
 
       .field-guide-cover {
-        max-width: 250px;
+        max-width: 500px;
       }
 
       .field-guide-free-text {
@@ -299,7 +299,7 @@
       }
 
       .field-guide-cover {
-        max-width: 200px;
+        max-width: 500px;
       }
 
       .field-guide-free-text {
@@ -317,7 +317,187 @@
     #app {
       display: none;
     }
+
+    /* MailerLite Form Styling Overrides */
+    /* Target MailerLite's form container and all its elements */
+    .ml-embedded,
+    .ml-embedded *,
+    [data-form="zOXaDH"],
+    [data-form="zOXaDH"] * {
+      box-sizing: border-box;
+    }
+
+    /* MailerLite form wrapper */
+    .ml-embedded form,
+    .ml-embedded .ml-form,
+    [data-form="zOXaDH"] form,
+    [data-form="zOXaDH"] .ml-form {
+      width: 100% !important;
+      max-width: 500px !important;
+      margin: 0 auto 1.5rem auto !important;
+      background: transparent !important;
+      border: none !important;
+      padding: 0 !important;
+    }
+
+    /* MailerLite input fields - Email, First Name, Last Name */
+    .ml-embedded input[type="email"],
+    .ml-embedded input[type="text"],
+    .ml-embedded input[name="email"],
+    .ml-embedded input[name="fields[email]"],
+    .ml-embedded input[name="fields[first_name]"],
+    .ml-embedded input[name="fields[last_name]"],
+    [data-form="zOXaDH"] input[type="email"],
+    [data-form="zOXaDH"] input[type="text"],
+    [data-form="zOXaDH"] input {
+      width: 100% !important;
+      padding: 1rem 1.25rem !important;
+      font-family: 'Roboto', sans-serif !important;
+      font-size: 1rem !important;
+      color: var(--color-text) !important;
+      background: rgba(255, 255, 255, 0.05) !important;
+      border: 1px solid rgba(212, 175, 55, 0.3) !important;
+      border-radius: 8px !important;
+      margin-bottom: 1rem !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .ml-embedded input[type="email"]::placeholder,
+    .ml-embedded input[type="text"]::placeholder,
+    .ml-embedded input::placeholder,
+    [data-form="zOXaDH"] input::placeholder {
+      color: rgba(224, 224, 224, 0.5) !important;
+    }
+
+    .ml-embedded input[type="email"]:focus,
+    .ml-embedded input[type="text"]:focus,
+    .ml-embedded input:focus,
+    [data-form="zOXaDH"] input:focus {
+      outline: none !important;
+      border-color: var(--color-gold) !important;
+      background: rgba(255, 255, 255, 0.08) !important;
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1) !important;
+    }
+
+    /* MailerLite submit button */
+    .ml-embedded button[type="submit"],
+    .ml-embedded input[type="submit"],
+    .ml-embedded .ml-button,
+    [data-form="zOXaDH"] button[type="submit"],
+    [data-form="zOXaDH"] input[type="submit"] {
+      width: 100% !important;
+      padding: 1rem 2rem !important;
+      font-family: 'Philosopher', serif !important;
+      font-size: 1.1rem !important;
+      font-weight: 700 !important;
+      color: var(--color-dark-blue) !important;
+      background: var(--color-gold) !important;
+      border: none !important;
+      border-radius: 8px !important;
+      cursor: pointer !important;
+      transition: all 0.3s ease !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.1em !important;
+      min-height: 56px !important;
+      margin-top: 0 !important;
+    }
+
+    .ml-embedded button[type="submit"]:hover,
+    .ml-embedded input[type="submit"]:hover,
+    .ml-embedded .ml-button:hover,
+    [data-form="zOXaDH"] button[type="submit"]:hover,
+    [data-form="zOXaDH"] input[type="submit"]:hover {
+      background: #f0e68c !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4) !important;
+    }
+
+    .ml-embedded button[type="submit"]:focus,
+    .ml-embedded input[type="submit"]:focus {
+      outline: 2px solid var(--color-gold) !important;
+      outline-offset: 3px !important;
+    }
+
+    /* MailerLite labels */
+    .ml-embedded label,
+    .ml-embedded .ml-form-label,
+    [data-form="zOXaDH"] label {
+      font-family: 'Roboto', sans-serif !important;
+      font-size: 0.9rem !important;
+      color: var(--color-text) !important;
+      margin-bottom: 0.5rem !important;
+      display: block !important;
+    }
+
+    /* MailerLite error messages */
+    .ml-embedded .ml-error,
+    .ml-embedded .ml-message,
+    [data-form="zOXaDH"] .ml-error,
+    [data-form="zOXaDH"] .ml-message {
+      color: #ff6b6b !important;
+      background: rgba(255, 107, 107, 0.1) !important;
+      border: 1px solid rgba(255, 107, 107, 0.3) !important;
+      padding: 0.75rem 1rem !important;
+      border-radius: 6px !important;
+      font-size: 0.9rem !important;
+      margin-top: 0.5rem !important;
+      font-family: 'Roboto', sans-serif !important;
+    }
+
+    /* Hide empty error boxes */
+    .ml-embedded .ml-error:empty,
+    [data-form="zOXaDH"] .ml-error:empty {
+      display: none !important;
+    }
+
+    /* MailerLite success messages */
+    .ml-embedded .ml-success,
+    .ml-embedded .ml-success-message,
+    [data-form="zOXaDH"] .ml-success,
+    [data-form="zOXaDH"] .ml-success-message {
+      color: var(--color-gold) !important;
+      background: rgba(212, 175, 55, 0.1) !important;
+      border: 1px solid rgba(212, 175, 55, 0.3) !important;
+      padding: 0.75rem 1rem !important;
+      border-radius: 6px !important;
+      font-size: 0.9rem !important;
+      margin-top: 0.5rem !important;
+      font-family: 'Roboto', sans-serif !important;
+      text-align: center !important;
+    }
+
+    /* Hide MailerLite branding if it appears */
+    .ml-embedded .ml-powered-by,
+    [data-form="zOXaDH"] .ml-powered-by,
+    .ml-powered-by {
+      display: none !important;
+    }
+
+    /* MailerLite form groups/fields */
+    .ml-embedded .ml-form-field,
+    .ml-embedded .form-group,
+    [data-form="zOXaDH"] .ml-form-field,
+    [data-form="zOXaDH"] .form-group {
+      margin-bottom: 1rem !important;
+    }
+
+    /* MailerLite form container styling */
+    .ml-embedded {
+      width: 100% !important;
+      max-width: 500px !important;
+      margin: 0 auto 1.5rem auto !important;
+    }
   </style>
+  
+  <!-- MailerLite Universal -->
+  <script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2013586');
+  </script>
+  <!-- End MailerLite Universal -->
 </head>
 
 <body>
@@ -331,17 +511,10 @@
 
     <!-- Main Content -->
     <main class="field-guide-content">
-      <!-- Cover Image (if available) -->
-      <img src="/field-guide-cover.jpg" alt="Consciousness: A Field Guide" class="field-guide-cover" onerror="this.style.display='none'">
-      
-      <!-- Free Copy Text -->
-      <p class="field-guide-free-text">A Free Copy of the Field Guide</p>
-
       <!-- Headline -->
-      <h1 class="field-guide-headline">Consciousness: A Field Guide</h1>
+      <h1 class="field-guide-headline">The Field Guide From Frequency to Practice</h1>
 
       <!-- Subheadline -->
-      <p class="field-guide-subheadline">From Frequency to Practice</p>
       <p class="field-guide-subheadline" style="font-size: 1.1rem; margin-top: -1rem;">A 37-page journey into consciousness as fundamental field</p>
 
       <!-- Description -->
@@ -349,22 +522,11 @@
         Explore how consciousness is not generated by your brain but received and modulated by it. Ancient wisdom meets quantum science. Practical frameworks for aligning with the field.
       </p>
 
-      <!-- Email Form -->
-      <form id="email-form" class="field-guide-form" action="https://app.kit.com/forms/8922987/subscriptions" method="post">
-        <div class="form-group">
-          <label for="email" class="sr-only">Email Address</label>
-          <input 
-            type="email" 
-            id="email" 
-            name="email_address" 
-            class="form-input" 
-            placeholder="Enter your email address" 
-            required 
-            aria-label="Email address"
-          >
-        </div>
-        <button type="submit" class="form-button">Get the Field Guide for Free</button>
-      </form>
+      <!-- Cover Image -->
+      <img src="/field-guide-cover.jpg" alt="Consciousness: A Field Guide" class="field-guide-cover" onerror="this.style.display='none'">
+
+      <!-- MailerLite Form Embed -->
+      <div class="ml-embedded" data-form="zOXaDH"></div>
 
       <!-- Privacy Text -->
       <p class="field-guide-privacy">
